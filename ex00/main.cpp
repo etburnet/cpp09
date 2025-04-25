@@ -6,14 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:23:42 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/23 15:26:36 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/25 16:02:31 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-#include <fstream>
-#include <stdlib.h>
-
 
 int main(int argc, char *argv[])
 {
@@ -71,11 +68,34 @@ int main(int argc, char *argv[])
 			std::map<std::string, float>::const_iterator it = DateExRate.find(date);
 			if (it == DateExRate.end())
 			{
-				while ()
+				// std::cout << "AVANT: " << date << std::endl;
+				int year, month, day;
+				sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day);
+				struct tm date_s;
+				date_s.tm_year = year;
+				date_s.tm_mon  = month;
+				date_s.tm_mday = day;
+				std::cout << "DECOMPO: " << year << " " << month << " " << day << std::endl;
+				std::cout << "DECOMPO2: " << date_s.tm_year << " " << date_s.tm_mon << " " << date_s.tm_mday << std::endl;
+				time_t t = mktime(&date_s);
+				t -= 24 * 60 * 60;
+				struct tm *new_date = localtime(&t);
+				char buffer[11];
+				sprintf(buffer, "%04d-%02d-%02d", 
+					new_date->tm_year, 
+					new_date->tm_mon, 
+					new_date->tm_mday);
+				std::cout << "Date: " << buffer << std::endl;
+				while (DateExRate.find(buffer) == DateExRate.end())
 				{
-					/* code */
+					t -= 24 * 60 * 60;
+					new_date = localtime(&t);
+					sprintf(buffer, "%04d-%02d-%02d", 
+						new_date->tm_year, 
+						new_date->tm_mon, 
+						new_date->tm_mday);
 				}
-				
+				it = DateExRate.find(buffer);
 			}
 			float calcul = val_f * it->second;
 			std::cout << date << " => " << value << " = " << calcul << std::endl;	

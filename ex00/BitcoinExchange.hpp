@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:23:44 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/25 13:07:28 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/28 11:56:47 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,31 @@
 #include <string>
 #include <map>
 #include <iostream>
+#include <stdio.h>
+#include <string.h>
 
-// class BitcoinExchange
-// {
-// 	private:
+struct data
+{
+	std::string date;
+	std::string value;
+	std::map<std::string, float> DateExRate;
+	std::string minDate;
+	float val_f;
+};
 
-// 	public:
-// 		BitcoinExchange();
-// 		BitcoinExchange(BitcoinExchange const &);
-// 		BitcoinExchange &operator=(BitcoinExchange const &);
-// 		~BitcoinExchange();
-// };
+class BitcoinExchange
+{
+	private:
+
+	public:
+		BitcoinExchange();
+		BitcoinExchange(BitcoinExchange const &);
+		BitcoinExchange &operator=(BitcoinExchange const &);
+		~BitcoinExchange();
+		int ft_btc_ex(char *argv[]);
+		int ft_error_handling(data &d, std::string tmp);
+		int ft_open_store_db(data &d);
+
+		// int ft_line_format(std::string date);
+		// int ft_check_float(float val_f);
+};

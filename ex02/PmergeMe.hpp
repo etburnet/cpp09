@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 12:54:10 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/29 10:11:12 by eburnet          ###   ########.fr       */
+/*   Created: 2025/04/29 10:02:00 by eburnet           #+#    #+#             */
+/*   Updated: 2025/04/29 14:32:42 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#include <iostream>
+#include <string>
+#include <limits.h>
+#include <stdlib.h>
+#include <vector>
+#include <utility> 
+#include <algorithm>
 
-int main(int argc, char *argv[])
+class PmergeMe
 {
-	RPN rpn;
-	return (rpn.ft_rpn(argc, argv));
+	public:
+		PmergeMe(/* args */);
+		~PmergeMe();
+};
+
+PmergeMe::PmergeMe(/* args */)
+{
+}
+
+PmergeMe::~PmergeMe()
+{
 }

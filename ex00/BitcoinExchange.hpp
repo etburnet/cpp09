@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:23:44 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/28 11:56:47 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/29 10:04:22 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ struct data
 
 class BitcoinExchange
 {
-	private:
-
 	public:
 		BitcoinExchange();
 		BitcoinExchange(BitcoinExchange const &);
@@ -39,7 +37,4 @@ class BitcoinExchange
 		int ft_btc_ex(char *argv[]);
 		int ft_error_handling(data &d, std::string tmp);
 		int ft_open_store_db(data &d);
-
-		// int ft_line_format(std::string date);
-		// int ft_check_float(float val_f);
 };

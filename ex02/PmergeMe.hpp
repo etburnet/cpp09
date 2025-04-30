@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:02:00 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/29 14:32:42 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/30 14:08:41 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 #include <limits.h>
 #include <stdlib.h>
 #include <vector>
-#include <utility> 
+#include <utility>
+#include <list>
 #include <algorithm>
+#include <ctime>
 
 class PmergeMe
 {
